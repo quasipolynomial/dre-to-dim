@@ -51,6 +51,7 @@ if __name__ == "__main__":
         
         nodes = v[2:]
 
+
     # Edges
     edges = 0
     for i, v in enumerate(data):
@@ -62,14 +63,22 @@ if __name__ == "__main__":
     outData.append(outHeader)
 
     # Rows
-    for i, v in enumerate(data):
-        line = v.split(" ")
-        node = line.pop(0)[:-1]
+    offset = 0
+    data.pop(len(data) - 1)
+
+    for i, line in enumerate(data):
+        lineArray = line.split(" ")
+        node = int(lineArray.pop(0)[:-1])
+
+        if(node == 0):
+            offset = 1
+        
+        node += offset
         lines = []
 
-        for j, v2 in enumerate(line):
-            newLine = "e "+ str(node) + " " + str(v2)
-            newLine = newLine.replace('.', '')
+        for j, destNodeStr in enumerate(lineArray):
+            destNode = int(destNodeStr.replace('.', '')) + offset
+            newLine = "e "+ str(node) + " " + str(destNode)
 
             if(i == len(data) - 1):
                 continue
