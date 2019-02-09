@@ -80,7 +80,7 @@ if __name__ == "__main__":
             destNode = int(destNodeStr.replace('.', '')) + offset
             newLine = "e "+ str(node) + " " + str(destNode)
 
-            if(i == len(data) - 1):
+            if(i == len(data)):
                 continue
 
             outData.append(newLine)
