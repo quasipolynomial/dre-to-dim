@@ -45,7 +45,11 @@ if __name__ == "__main__":
     header_array = header.split(" ")
     
     # Nodes
-    nodes = header_array[1][2:]
+    for i, v in enumerate(header_array):
+        if("n" not in v):
+            continue
+        
+        nodes = v[2:]
 
     # Edges
     edges = 0
