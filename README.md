@@ -5,4 +5,4 @@ Converts dreadnaut to DIMACS
 Python 2.7
 
 # Usage
-python {input_dreadnaut_filepath.dre} {output_dimacs_filepath}
+python dre-to-dim {input_dreadnaut_filepath.dre} {output_dimacs_filepath}
